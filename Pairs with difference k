@@ -1,0 +1,45 @@
+'''
+Given an array arr[] of positive integers. Find the number of pairs of integers whose difference equals a given number k.
+Note: (a, b) and (b, a) are considered the same. Also, the same numbers at different indices are considered different.
+
+Examples:
+
+Input: arr[] = [1, 5, 3, 4, 2], k = 3
+Output: 2
+Explanation: There are 2 pairs with difference 3,the pairs are {1, 4} and {5, 2} 
+Input: arr[] = [8, 12, 16, 4, 0, 20], k = 4
+Output: 5
+Explanation: There are 5 pairs with difference 4, the pairs are {0, 4}, {4, 8}, {8, 12}, {12, 16} and {16, 20}.
+'''
+#User function Template for python3
+class Solution:
+    def countPairsWithDiffK(self,arr, k):
+        res=0
+        maxi=max(arr)
+        a=[0]*(maxi+1)
+        for i in arr:
+            a[i]+=1
+        for i in range(maxi+1):
+            if a[i]:
+                if i+k < maxi+1:
+                     res+=a[i]*a[i+k]
+        return res
+                
+           
+        
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+    tc = int(input())
+    while tc > 0:
+        arr = list(map(int, input().strip().split()))
+        k = int(input().strip())
+        ob = Solution()
+        ans = ob.countPairsWithDiffK(arr, k)
+        print(ans)
+        print("~")
+        tc -= 1
+
+# } Driver Code Ends
