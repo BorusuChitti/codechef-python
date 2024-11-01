@@ -1,0 +1,10 @@
+def largest_digit(num):
+    # Convert the number to a string (use abs to ignore negative sign)
+    num_str = str(abs(num))
+    
+    # Find the largest digit by converting each character to an integer
+    return max(int(digit) for digit in num_str)
+
+# Example usage
+num = 58392
+print(f"The largest digit in {num} is {largest_digit(num)}.")
