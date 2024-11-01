@@ -1,0 +1,11 @@
+def reverse_number(num):
+    # Check if the number is negative
+    sign = -1 if num < 0 else 1
+    # Reverse the digits by converting to string, reversing, and converting back to int
+    reversed_num = int(str(abs(num))[::-1])
+    # Restore the original sign
+    return sign * reversed_num
+
+# Example usage
+num = 12345
+print(f"Reversed number: {reverse_number(num)}")
