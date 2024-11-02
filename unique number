@@ -1,0 +1,13 @@
+def is_unique(num):
+    # Convert the number to a string
+    num_str = str(num)
+    
+    # Check if the length of the set of digits is equal to the length of the number
+    return len(set(num_str)) == len(num_str)
+
+# Example usage
+num = 12345
+if is_unique(num):
+    print(f"{num} is a unique number.")
+else:
+    print(f"{num} is not a unique number.")
