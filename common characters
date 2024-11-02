@@ -1,0 +1,22 @@
+from collections import Counter
+
+def common_characters(sentence):
+    # Normalize the sentence (convert to lowercase and remove spaces)
+    normalized_sentence = sentence.replace(" ", "").lower()
+    
+    # Count the frequency of each character
+    char_count = Counter(normalized_sentence)
+    
+    # Find characters that appear more than once
+    common_chars = [char for char, count in char_count.items() if count > 1]
+    
+    return common_chars
+
+# Example usage
+sentence = "Programming is fun"
+common_chars = common_characters(sentence)
+
+if common_chars:
+    print(f"Common characters: {', '.join(common_chars)}")
+else:
+    print("No common characters.")
