@@ -1,0 +1,13 @@
+def maximize_69_number(num):
+    # Convert the number to a string to replace digits
+    num_str = str(num)
+    
+    # Replace the first occurrence of '6' with '9' to maximize the number
+    max_num = num_str.replace('6', '9', 1)
+    
+    return int(max_num)
+
+# Example usage
+number = 669  # Replace this with your number
+maximized_number = maximize_69_number(number)
+print("The maximized number is:", maximized_number)
