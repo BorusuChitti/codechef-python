@@ -1,0 +1,16 @@
+def is_neon_number(number):
+    # Calculate the square of the number
+    square = number ** 2
+    
+    # Convert the square to a string and calculate the sum of its digits
+    sum_of_digits = sum(int(digit) for digit in str(square))
+    
+    # Check if the sum of digits is equal to the original number
+    return sum_of_digits == number
+
+# Example
+number = 9
+if is_neon_number(number):
+    print(f"{number} is a Neon Number.")
+else:
+    print(f"{number} is not a Neon Number.")
