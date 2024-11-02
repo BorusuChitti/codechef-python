@@ -1,0 +1,13 @@
+def is_pronic(num):
+    # Loop to find if num is a product of two consecutive integers
+    for i in range(int(num ** 0.5) + 1):
+        if i * (i + 1) == num:
+            return True
+    return False
+
+# Example usage
+num = 12
+if is_pronic(num):
+    print(f"{num} is a Pronic number.")
+else:
+    print(f"{num} is not a Pronic number.")
