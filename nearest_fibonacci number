@@ -1,0 +1,17 @@
+def nearest_fibonacci(num):
+    # Initialize the first two Fibonacci numbers
+    fib1, fib2 = 0, 1
+    
+    # Generate Fibonacci numbers until the closest one is found
+    while fib2 < num:
+        fib1, fib2 = fib2, fib1 + fib2
+
+    # Compare the two closest Fibonacci numbers
+    if abs(fib2 - num) < abs(fib1 - num):
+        return fib2
+    else:
+        return fib1
+
+# Example usage
+num = 1000
+print(f"The nearest Fibonacci number to {num} is {nearest_fibonacci(num)}.")
