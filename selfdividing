@@ -1,0 +1,15 @@
+number = 128
+original_number = number
+is_self_dividing = True
+
+while number > 0:
+    digit = number % 10
+    if digit == 0 or original_number % digit != 0:
+        is_self_dividing = False
+        break
+    number //= 10
+
+if is_self_dividing:
+    print(f"{original_number} is a self-dividing number.")
+else:
+    print(f"{original_number} is not a self-dividing number.")
