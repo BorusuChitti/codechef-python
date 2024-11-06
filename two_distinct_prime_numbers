@@ -1,0 +1,27 @@
+def is_prime(n):
+    """Check if a number is prime."""
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def find_two_prime_factors(product):
+    """Find two distinct prime factors of a product."""
+    for i in range(2, int(product ** 0.5) + 1):
+        if product % i == 0:  # i is a factor
+            other_factor = product // i
+            if is_prime(i) and is_prime(other_factor) and i != other_factor:
+                return i, other_factor
+    return None  # No two distinct prime factors found
+
+# Example usage:
+product = 15
+result = find_two_prime_factors(product)
+if result:
+    # Unpack the tuple and print the values without braces
+    prime1, prime2 = result
+    print(prime1, prime2)
+else:
+    print(f"{product} does not have two distinct prime factors.")
