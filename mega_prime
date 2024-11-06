@@ -1,0 +1,24 @@
+def is_prime(n):
+    """Check if a number is prime."""
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def is_mega_prime(n):
+    """Check if a number is a mega prime."""
+    if not is_prime(n):
+        return False
+    for digit in str(n):
+        if int(digit) not in [2, 3, 5, 7]:
+            return False
+    return True
+
+# Example usage:
+number = 37
+if is_mega_prime(number):
+    print(f"{number} is a mega prime number.")
+else:
+    print(f"{number} is not a mega prime number.")
